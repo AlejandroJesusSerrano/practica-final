@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from 'src/environments/environments.prod';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,5 +8,4 @@ import { environment } from 'src/environments/environments.prod';
 })
 export class DashboardComponent {
   showFiller = false;
-  isProd = environment.isProduction
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
-interface Student {
+export interface Student {
   id: number;
   name: string;
   last_name: string;
@@ -61,7 +61,7 @@ export class TablesComponent {
     }
   ];
 
-  displayedColumns: string[] = ['id', 'name', 'last_name', 'register_date', 'email'];
+  displayedColumns: string[] = ['id', 'name', 'last_name', 'completeName', 'register_date', 'email'];
   
   dataSource = new MatTableDataSource(this.students);
 

@@ -1,17 +1,44 @@
+<p appFontSize [size]="16" *appRepeat="5">
+    Hola Mundo!
+</p>
+
 <form [formGroup]="formRegister">
 
-    <p>
-        <mat-form-field appearance="fill">
 
-            <mat-label>Nombre</mat-label>
-            <input matInput placeholder="Nombre" [formControl]="nameControl">
-            <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Ingrese los nombres</mat-hint>
-            <mat-error>Componente Invalido</mat-error>
+    <div class="flex flex-column w-2">
+        <ng-container>
+            <mat-form-field appearance="fill">
 
-        </mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" [formControl]="nameControl">
+                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Ingrese los nombres</mat-hint>
+                <mat-error *ngFor="let error of nameControl.errors | keyvalue">
+                    {{ error | controlErrorMessage }}
+                </mat-error>
 
-    </p>
+            </mat-form-field>
+        </ng-container>
+
+        <ng-container>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input 
+                    matInput 
+                    [type]="hide ? 'password' : 'text'"
+                    [formControl]="passwordControl"
+                >
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngFor="let error of passwordControl.errors | keyvalue">
+                    {{ error | controlErrorMessage }}
+                </mat-error>
+            </mat-form-field>
+        </ng-container>
+    </div>
+
 
     <p>
         <mat-form-field appearance="outline">
@@ -40,3 +67,10 @@
 
 
 </form>
+
+<pre>
+    {{ nameControl.errors | keyvalue | json }}
+</pre>
+<pre>
+    {{ passwordControl.errors | keyvalue | json }}
+</pre>

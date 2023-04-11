@@ -4,6 +4,7 @@ import { TablesComponent } from './tables.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -16,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    SharedModule,
 
   ],
   exports: [
