@@ -10,6 +10,7 @@ import { ButtonsAndIconsModule } from '../pages/buttons-and-icons/buttons-and-ic
 import { FormularModule } from '../pages/formular/formular.module';
 import { DialogsModule } from '../pages/dialogs/dialogs.module';
 import { TablesModule } from '../pages/tables/tables.module';
+import { PatronIterModule } from '../pages/patron-iter/patron-iter.module';
 
 
 
@@ -28,6 +29,7 @@ import { TablesModule } from '../pages/tables/tables.module';
     FormularModule,
     DialogsModule, 
     TablesModule,
+    PatronIterModule,
     
 
   ],
